@@ -15,3 +15,4 @@ dependencyResolutionManagement {
 
 rootProject.name = "DUPR Estimate"
 include(":app")
+include(":logic")
