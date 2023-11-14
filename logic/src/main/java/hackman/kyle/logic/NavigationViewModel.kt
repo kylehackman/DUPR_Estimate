@@ -19,4 +19,14 @@ object NavigationViewModel {
 
     fun shouldOverrideBackPressed() = currentScreen != Screen.START
 
+    fun onBackPressed() {
+        when (currentScreen) {
+            Screen.START -> Unit
+            Screen.Information -> navigateTo(Screen.START)
+            Screen.Calculation -> navigateTo(Screen.START)
+            Screen.Results -> ResultsViewModel.systemBack()
+            else -> {}
+        }
+    }
+
 }
