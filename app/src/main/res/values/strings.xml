@@ -3,4 +3,11 @@
     <string name="app_name_v2">DUPR Estimator</string>
     <string name="estimate_DUPR">Estimate Your DUPR!</string>
     <string name="what_is_DUPR">What is DUPR?</string>
+    <string name="how_its_calculated">How is DUPR Calcualted?</string>
+    <string name="DUPR_calculation">Your DUPR rating is calculated by:</string>
+    <string name="calculation_criteria_1">1. Margin of Victory (points won)</string>
+    <string name="calculation_criteria_2">2. Type of Result (recreational play vs. league, sanctioned tournaments, etc.)</string>
+    <string name="calculation_criteria_3">3. Outcome (win or loss)</string>
+    <string name="scale_image">scale image</string>
+    <string name="DUPR_info">DUPR is an acronym for Dynamic Universal Pickleball Rating, which is commonly referred to as the most inclusive and accurate rating system in pickleball.The DUP rating system uses a scale of 2.00 to 8.00</string>
 </resources>
