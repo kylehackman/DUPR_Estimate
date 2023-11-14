@@ -3,13 +3,14 @@ package hackman.kyle.logic
 object NavigationViewModel {
 
     enum class Screen {
-        START, Information, Calculation, Quiz, Results
+        START, INFORMATION, CALCULATION, QUIZ, RESULTS
     }
 
     private var currentScreen = Screen.START
         set(value) {
             field = value
             screenState.update(value)
+
         }
     val screenState = Observable(currentScreen)
 
@@ -22,9 +23,9 @@ object NavigationViewModel {
     fun onBackPressed() {
         when (currentScreen) {
             Screen.START -> Unit
-            Screen.Information -> navigateTo(Screen.START)
-            Screen.Calculation -> navigateTo(Screen.START)
-            Screen.Results -> ResultsViewModel.systemBack()
+            Screen.INFORMATION -> navigateTo(Screen.START)
+            Screen.CALCULATION -> navigateTo(Screen.START)
+            Screen.RESULTS -> ResultsViewModel.systemBack()
             else -> {}
         }
     }

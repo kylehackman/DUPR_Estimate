@@ -14,6 +14,7 @@ class MainActivity : AppCompatActivity() {
 
         binding = ActivityMainBinding.inflate(LayoutInflater.from(this))
         setContentView(binding.root)
+        observeScreenState()
     }
 
     override fun onDestroy() {
@@ -28,4 +29,22 @@ class MainActivity : AppCompatActivity() {
             super.onBackPressed()
         }
     }
+
+    private fun observeScreenState() {
+        NavigationViewModel.screenState.addObserver {
+            val fragmentNavigateTo = when (it) {
+                NavigationViewModel.Screen.START -> StartFragment()
+                NavigationViewModel.Screen.INFORMATION -> InformationFragment()
+                NavigationViewModel.Screen.CALCULATION -> CalculationFragment()
+                NavigationViewModel.Screen.RESULTS -> ResultsFragment()
+            }
+            supportFragmentManager.commit {
+                if (it != NavigationViewModel.Screen.RESULTS) {
+                    replace(R.id.activityMain, fragmentNavigateTo)
+                } else add(R.id.activityMain, fragmentNavigateTo)
+            }
+        }
+    }
 }
+
+
