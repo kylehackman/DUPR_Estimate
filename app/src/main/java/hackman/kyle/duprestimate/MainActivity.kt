@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity
 import hackman.kyle.duprestimate.databinding.ActivityMainBinding
 import hackman.kyle.logic.NavigationViewModel
 import androidx.fragment.app.commit
+import hackman.kyle.duprestimate.R
 
 class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
@@ -21,14 +22,6 @@ class MainActivity : AppCompatActivity() {
     override fun onDestroy() {
         NavigationViewModel.screenState.removeAllObservers()
         super.onDestroy()
-    }
-
-    override fun onBackPressed() {
-        if (NavigationViewModel.shouldOverrideBackPressed()) {
-            NavigationViewModel.onBackPressed()
-        } else {
-            super.onBackPressed()
-        }
     }
 
     private fun observeScreenState() {
@@ -47,6 +40,17 @@ class MainActivity : AppCompatActivity() {
             }
         }
     }
+
+    @Deprecated("Deprecated in Java")
+    @Suppress("DEPRECATION")
+    override fun onBackPressed() {
+        if (NavigationViewModel.shouldOverrideBackPressed()) {
+            NavigationViewModel.onBackPressed()
+        } else {
+            super.onBackPressed()
+        }
+    }
 }
+
 
 

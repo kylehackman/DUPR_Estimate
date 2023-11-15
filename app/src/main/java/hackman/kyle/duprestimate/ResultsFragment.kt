@@ -1,4 +1,6 @@
 package hackman.kyle.duprestimate
 
-class ResultsFragment {
+import androidx.fragment.app.Fragment
+
+class ResultsFragment : Fragment() {
 }

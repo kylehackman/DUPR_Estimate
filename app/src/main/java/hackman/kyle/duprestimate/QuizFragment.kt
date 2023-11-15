@@ -1,4 +1,7 @@
 package hackman.kyle.duprestimate
 
-class QuizFragment {
+import androidx.fragment.app.Fragment
+
+class QuizFragment : Fragment() {
+
 }
