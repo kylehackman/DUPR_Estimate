@@ -41,13 +41,13 @@ class StartFragment : Fragment() {
     }
 
     private fun bindCalculateDUPR() {
-        binding.whatIsDUPR.setOnClickListener{
+        binding.howItsCalculated.setOnClickListener{
             StartViewModel.clickHowToCalculate()
         }
     }
 
     private fun bindQuiz() {
-        binding.whatIsDUPR.setOnClickListener{
+        binding.estimateDUPR.setOnClickListener{
             StartViewModel.clickTakeQuiz()
         }
     }
