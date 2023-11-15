@@ -33,4 +33,20 @@
         app:layout_constraintTop_toBottomOf="@id/title"
         app:layout_constraintVertical_bias=".6" />
 
+
+    <TextView
+        android:id="@+id/back"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/start_menu_boxes"
+        android:padding="10dp"
+        android:text="Back"
+        android:textColor="@color/black"
+        android:textSize="28sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/calculation_prompt"
+        />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
