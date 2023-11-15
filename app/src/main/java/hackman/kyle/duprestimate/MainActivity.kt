@@ -5,6 +5,7 @@ import android.view.LayoutInflater
 import androidx.appcompat.app.AppCompatActivity
 import hackman.kyle.duprestimate.databinding.ActivityMainBinding
 import hackman.kyle.logic.NavigationViewModel
+import androidx.fragment.app.commit
 
 class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
@@ -37,6 +38,7 @@ class MainActivity : AppCompatActivity() {
                 NavigationViewModel.Screen.INFORMATION -> InformationFragment()
                 NavigationViewModel.Screen.CALCULATION -> CalculationFragment()
                 NavigationViewModel.Screen.RESULTS -> ResultsFragment()
+                NavigationViewModel.Screen.QUIZ -> QuizFragment()
             }
             supportFragmentManager.commit {
                 if (it != NavigationViewModel.Screen.RESULTS) {
