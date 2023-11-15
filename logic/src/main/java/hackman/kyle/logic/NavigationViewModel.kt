@@ -10,7 +10,6 @@ object NavigationViewModel {
         set(value) {
             field = value
             screenState.update(value)
-
         }
     val screenState = Observable(currentScreen)
 
@@ -29,5 +28,4 @@ object NavigationViewModel {
             Screen.RESULTS -> ResultsViewModel.systemBack()
         }
     }
-
 }
