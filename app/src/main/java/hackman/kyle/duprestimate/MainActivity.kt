@@ -6,7 +6,6 @@ import androidx.appcompat.app.AppCompatActivity
 import hackman.kyle.duprestimate.databinding.ActivityMainBinding
 import hackman.kyle.logic.NavigationViewModel
 import androidx.fragment.app.commit
-import hackman.kyle.duprestimate.R
 
 class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
