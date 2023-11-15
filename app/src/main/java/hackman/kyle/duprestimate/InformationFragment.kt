@@ -25,4 +25,13 @@ class InformationFragment : Fragment() {
             InformationViewModel.clickBack()
         }
     }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        bindBackButton()
+    }
+
+    override fun onDestroyView() {
+        _binding = null
+        super.onDestroyView()
+    }
 }
