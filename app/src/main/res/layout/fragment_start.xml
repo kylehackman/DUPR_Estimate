@@ -46,7 +46,7 @@
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias=".6"/>
+        app:layout_constraintVertical_bias=".6" />
 
     <TextView
         android:id="@+id/estimate_DUPR"
