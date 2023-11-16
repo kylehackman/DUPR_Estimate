@@ -27,21 +27,28 @@ object QuizViewModel {
 
     fun clickNoButton() {
         NavigationViewModel.navigateTo(NavigationViewModel.Screen.RESULTS)
-    }
-
-    fun scoreValue() {
-        score
+        ResultsViewModel.setDuprRating(score)
+        resetQuestionIndex()
     }
 
     fun resetScore() {
         score = 2.0
     }
 
+    fun resetQuestionIndex() {
+        questionIndex = 0
+        question = Database.questions[questionIndex]
+    }
+
     fun nextQuestion() {
         if (questionIndex >= Database.questions.size - 1) {
             NavigationViewModel.navigateTo(NavigationViewModel.Screen.RESULTS)
+            ResultsViewModel.setDuprRating(score)
+            resetQuestionIndex()
         } else {
             questionIndex++
+            ResultsViewModel.setDuprRating(score)
+
         }
         question = Database.questions[questionIndex]
     }

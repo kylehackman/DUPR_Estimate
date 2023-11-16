@@ -27,7 +27,7 @@ class ResultsFragment : Fragment() {
 
     private fun observeRating() {
          ResultsViewModel.ratingScoreState.addObserver {
-            binding.ratingResult.text = it
+            binding.ratingResult.text = it.toString()
         }
     }
 
