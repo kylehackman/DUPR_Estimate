@@ -13,7 +13,9 @@ class QuizFragment : Fragment() {
     private val binding get() = _binding!!
 
     override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?
+        inflater: LayoutInflater,
+        container: ViewGroup?,
+        savedInstanceState: Bundle?
     ): View {
         _binding = FragmentTakeQuizBinding.inflate(inflater, container, false)
         return binding.root
@@ -22,6 +24,7 @@ class QuizFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         bindQuizNoButton()
         bindQuizYesButton()
+        observeQuestion()
     }
 
     private fun observeQuestion() {

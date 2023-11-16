@@ -8,11 +8,9 @@ import androidx.fragment.app.Fragment
 import hackman.kyle.duprestimate.databinding.FragmentStartBinding
 import hackman.kyle.logic.StartViewModel
 
-
 class StartFragment : Fragment() {
     private var _binding: FragmentStartBinding? = null
     private val binding get() = _binding!!
-
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -35,19 +33,19 @@ class StartFragment : Fragment() {
     }
 
     private fun bindWhatIsDUPR() {
-        binding.whatIsDUPR.setOnClickListener{
+        binding.whatIsDUPR.setOnClickListener {
             StartViewModel.clickWhatIsDUPR()
         }
     }
 
     private fun bindCalculateDUPR() {
-        binding.howItsCalculated.setOnClickListener{
+        binding.howItsCalculated.setOnClickListener {
             StartViewModel.clickHowToCalculate()
         }
     }
 
     private fun bindQuiz() {
-        binding.estimateDUPR.setOnClickListener{
+        binding.estimateDUPR.setOnClickListener {
             StartViewModel.clickTakeQuiz()
         }
     }
