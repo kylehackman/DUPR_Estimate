@@ -6,7 +6,7 @@ object Database {
         Question("question1", "You have a basic understanding of how to play and scoring."),
         Question(
             "question2",
-            "You can have the odd short rally without hitting the ball out or into the net. You are very aware of your clumsy footwork around the court"
+            "You can have the odd short rally without hitting the ball out or into the net. You are very aware of your clumsy footwork around the court."
         ),
         Question(
             "question3",
