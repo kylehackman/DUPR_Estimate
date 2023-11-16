@@ -38,6 +38,11 @@ object QuizViewModel {
     }
 
     fun nextQuestion() {
-        questionIndex++
+        if (questionIndex >= Database.questions.size - 1) {
+            NavigationViewModel.navigateTo(NavigationViewModel.Screen.RESULTS)
+        } else {
+            questionIndex++
+        }
+        question = Database.questions[questionIndex]
     }
 }
