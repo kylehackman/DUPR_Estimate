@@ -27,8 +27,12 @@ object QuizViewModel {
 
     fun clickNoButton() {
         NavigationViewModel.navigateTo(NavigationViewModel.Screen.RESULTS)
-        ResultsViewModel.setDuprRating(score)
         resetQuestionIndex()
+        if (score == 2.0){
+            ResultsViewModel.setDuprRating(0.0)
+        }else {
+            ResultsViewModel.setDuprRating(score)
+        }
     }
 
     fun resetScore() {
