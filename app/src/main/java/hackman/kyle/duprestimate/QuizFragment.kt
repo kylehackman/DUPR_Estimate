@@ -26,7 +26,7 @@ class QuizFragment : Fragment() {
 
     private fun observeQuestion() {
         QuizViewModel.questionState.observe(this) {
-            binding.question.text = it.name
+            binding.question.text = it.criteria
         }
     }
 
