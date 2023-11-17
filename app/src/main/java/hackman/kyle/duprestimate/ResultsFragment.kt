@@ -40,6 +40,7 @@ class ResultsFragment : Fragment() {
     override fun onDestroyView() {
         _binding = null
         ResultsViewModel.ratingScoreState.removeAllObservers()
+        ResultsViewModel.classificationState.removeAllObservers()
         super.onDestroyView()
     }
 

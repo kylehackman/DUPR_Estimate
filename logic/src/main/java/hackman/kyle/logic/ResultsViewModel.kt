@@ -28,20 +28,14 @@ object ResultsViewModel {
         onBack()
     }
 
-    // TODO rating dosnt seem to be working, and bug when play the 2nd time
-    fun calculateRating() {
-        if (rating >= 2 && rating < 3) {
+    fun calculateClassification(scoreClassification: Double) {
+        if (scoreClassification >= 2.0 && scoreClassification < 3.0) {
             classification = "Novice"
-        }
-        if (rating >= 3 && rating < 4) {
+        } else if (scoreClassification >= 3.0 && scoreClassification < 4.0) {
             classification = "Intermediate"
-        }
-
-        if (rating >= 4 && rating < 5) {
+        } else if (scoreClassification >= 4.0 && scoreClassification < 5.0) {
             classification = "Advanced"
-        }
-
-        if (rating >= 5) {
+        } else if (scoreClassification >= 5.0) {
             classification = "Pro"
         } else {
             classification = "Beginner"

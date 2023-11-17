@@ -10,7 +10,7 @@ object QuizViewModel {
 
     val questionState = Observable(Database.questions[0])
 
-    private var score = 2.0
+    var score = 2.0
         set(value) {
             field = value
             scoreState.update(value)
@@ -58,6 +58,6 @@ object QuizViewModel {
 
     fun setRatingAndClassification() {
         ResultsViewModel.setDuprRating(score)
-        ResultsViewModel.calculateRating()
+        ResultsViewModel.calculateClassification(score)
     }
 }
