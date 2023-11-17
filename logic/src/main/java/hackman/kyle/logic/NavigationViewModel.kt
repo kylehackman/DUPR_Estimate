@@ -22,9 +22,9 @@ object NavigationViewModel {
     fun onBackPressed() {
         when (currentScreen) {
             Screen.START -> Unit
-            Screen.INFORMATION -> navigateTo(Screen.INFORMATION)
-            Screen.CALCULATION -> navigateTo(Screen.CALCULATION)
-            Screen.QUIZ -> navigateTo(Screen.QUIZ)
+            Screen.INFORMATION -> navigateTo(Screen.START)
+            Screen.CALCULATION -> navigateTo(Screen.START)
+            Screen.QUIZ -> navigateTo(Screen.START)
             Screen.RESULTS -> ResultsViewModel.systemBack()
         }
     }
