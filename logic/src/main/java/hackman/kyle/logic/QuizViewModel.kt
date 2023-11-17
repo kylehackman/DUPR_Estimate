@@ -10,7 +10,7 @@ object QuizViewModel {
 
     val questionState = Observable(Database.questions[0])
 
-    var score = 2.0
+    var score = 1.5
         set(value) {
             field = value
             scoreState.update(value)

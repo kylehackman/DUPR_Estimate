@@ -41,10 +41,13 @@ object ResultsViewModel {
             classification = "Beginner"
         }
     }
-
+    fun resetClassification() {
+        classification = "Beginner"
+    }
     private fun onBack() {
         NavigationViewModel.navigateTo(NavigationViewModel.Screen.START)
         QuizViewModel.resetScore()
         QuizViewModel.resetQuestionIndex()
+        resetClassification()
     }
 }
