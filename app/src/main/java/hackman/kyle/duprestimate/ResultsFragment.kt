@@ -23,14 +23,20 @@ class ResultsFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         bindBackButton()
         observeRating()
+        observeClassification()
     }
 
     private fun observeRating() {
-         ResultsViewModel.ratingScoreState.addObserver {
+        ResultsViewModel.ratingScoreState.addObserver {
             binding.ratingResult.text = it.toString()
         }
     }
 
+    private fun observeClassification() {
+        ResultsViewModel.classificationState.addObserver {
+            binding.ratingClassification.text = it
+        }
+    }
     override fun onDestroyView() {
         _binding = null
         ResultsViewModel.ratingScoreState.removeAllObservers()

@@ -28,10 +28,10 @@ object QuizViewModel {
     fun clickNoButton() {
         NavigationViewModel.navigateTo(NavigationViewModel.Screen.RESULTS)
         resetQuestionIndex()
-        if (score == 2.0){
+        if (score == 2.0) {
             ResultsViewModel.setDuprRating(0.0)
-        }else {
-            ResultsViewModel.setDuprRating(score)
+        } else {
+            setRatingAndClassification()
         }
     }
 
@@ -47,13 +47,17 @@ object QuizViewModel {
     fun nextQuestion() {
         if (questionIndex >= Database.questions.size - 1) {
             NavigationViewModel.navigateTo(NavigationViewModel.Screen.RESULTS)
-            ResultsViewModel.setDuprRating(score)
+            setRatingAndClassification()
             resetQuestionIndex()
         } else {
             questionIndex++
-            ResultsViewModel.setDuprRating(score)
-
+            setRatingAndClassification()
         }
         question = Database.questions[questionIndex]
+    }
+
+    fun setRatingAndClassification() {
+        ResultsViewModel.setDuprRating(score)
+        ResultsViewModel.calculateRating()
     }
 }
