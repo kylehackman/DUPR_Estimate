@@ -13,7 +13,7 @@
         android:layout_marginBottom="350dp"
         android:text="@string/how_its_calculated"
         android:textColor="@color/black"
-        android:textSize="32sp"
+        android:textSize="34sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
@@ -21,68 +21,40 @@
         app:layout_constraintVertical_bias=".2" />
 
     <TextView
-        android:id="@+id/calculation_prompt"
+        android:id="@+id/calculation"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:background="@drawable/text_background_box"
+        android:padding="10dp"
         android:text="@string/DUPR_calculation"
         android:textColor="@color/black"
-        android:textSize="28sp"
+        android:textSize="24sp"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@id/title" />
-
-    <TextView
-        android:id="@+id/calculation_criteria_1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/calculation_criteria_1"
-        android:textColor="@color/black"
-        android:textSize="28sp"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/calculation_prompt" />
-
-    <TextView
-        android:id="@+id/calculation_criteria_2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/calculation_criteria_2"
-        android:textColor="@color/black"
-        android:textSize="28sp"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/calculation_criteria_1" />
-
-    <TextView
-        android:id="@+id/calculation_criteria_3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/calculation_criteria_3"
-        android:textColor="@color/black"
-        android:textSize="28sp"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/calculation_criteria_2" />
 
     <ImageView
         android:id="@+id/dupr_scale_image"
         android:layout_width="0dp"
         android:layout_height="300dp"
+        android:contentDescription="@string/scale_image"
         android:src="@drawable/dupr_scale"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/calculation_criteria_3"
-        android:contentDescription="@string/scale_image" />
+        app:layout_constraintTop_toBottomOf="@id/calculation" />
 
     <TextView
         android:id="@+id/back"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:background="@drawable/start_menu_boxes"
+        android:background="@drawable/rounded_box"
         android:padding="10dp"
-        android:text="Back"
+        android:gravity="center"
+        android:text="@string/back_button"
         android:textColor="@color/black"
         android:textSize="28sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/dupr_scale_image"
-        />
+        app:layout_constraintTop_toBottomOf="@id/dupr_scale_image" />
 </androidx.constraintlayout.widget.ConstraintLayout>

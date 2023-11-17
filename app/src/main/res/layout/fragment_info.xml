@@ -13,7 +13,7 @@
         android:layout_marginBottom="350dp"
         android:text="@string/what_is_DUPR"
         android:textColor="@color/black"
-        android:textSize="28sp"
+        android:textSize="40sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
@@ -21,10 +21,12 @@
         app:layout_constraintVertical_bias=".2" />
 
     <TextView
-        android:id="@+id/calculation_prompt"
+        android:id="@+id/calculation"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="350dp"
+        android:padding="10dp"
+        android:background="@drawable/text_background_box"
         android:text="@string/DUPR_info"
         android:textColor="@color/black"
         android:textSize="28sp"
@@ -38,15 +40,16 @@
         android:id="@+id/back"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:background="@drawable/start_menu_boxes"
+        android:background="@drawable/rounded_box"
+        android:gravity="center"
         android:padding="10dp"
-        android:text="Back"
+        android:text="@string/back_button"
         android:textColor="@color/black"
         android:textSize="28sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/calculation_prompt"
+        app:layout_constraintTop_toBottomOf="@id/calculation"
         />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
