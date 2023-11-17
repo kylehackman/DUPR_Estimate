@@ -41,7 +41,7 @@ object ResultsViewModel {
             classification = "Beginner"
         }
     }
-    fun resetClassification() {
+    private fun resetClassification() {
         classification = "Beginner"
     }
     private fun onBack() {
