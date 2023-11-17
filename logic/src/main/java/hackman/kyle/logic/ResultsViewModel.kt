@@ -2,7 +2,7 @@ package hackman.kyle.logic
 
 object ResultsViewModel {
 
-    private var classification = ""
+    private var classification = "Beginner"
         set(value) {
             field = value
             classificationState.update(value)
