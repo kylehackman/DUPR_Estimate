@@ -27,7 +27,8 @@ object ResultsViewModel {
     fun systemBack() {
         onBack()
     }
-// TODO rating dosnt seem to be working, and bug when play the 2nd time
+
+    // TODO rating dosnt seem to be working, and bug when play the 2nd time
     fun calculateRating() {
         if (rating >= 2 && rating < 3) {
             classification = "Novice"
