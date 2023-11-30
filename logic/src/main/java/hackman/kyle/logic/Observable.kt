@@ -3,6 +3,7 @@ package hackman.kyle.logic
 class Observable<T>(initialValue: T)  {
     private val observers = mutableListOf<(T) -> Unit>()
     private var currentValue = initialValue
+    val value get() = currentValue
 
     fun addObserver(observer: (T) -> Unit) {
         observers.add(observer)
@@ -23,4 +24,6 @@ class Observable<T>(initialValue: T)  {
             observer(value)
         }
     }
+
+
 }

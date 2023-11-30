@@ -27,7 +27,7 @@ class ResultsFragment : Fragment() {
     }
 
     private fun observeRating() {
-        ResultsViewModel.ratingScoreState.addObserver {
+        ResultsViewModel.ratingState.addObserver {
             binding.ratingResult.text = it.toString()
         }
     }
@@ -39,7 +39,7 @@ class ResultsFragment : Fragment() {
     }
     override fun onDestroyView() {
         _binding = null
-        ResultsViewModel.ratingScoreState.removeAllObservers()
+        ResultsViewModel.ratingState.removeAllObservers()
         ResultsViewModel.classificationState.removeAllObservers()
         super.onDestroyView()
     }

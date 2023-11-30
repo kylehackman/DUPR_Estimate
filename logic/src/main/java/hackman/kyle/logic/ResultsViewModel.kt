@@ -12,31 +12,35 @@ object ResultsViewModel {
     private var rating = 0.0
         set(value) {
             field = value
-            ratingScoreState.update(value)
+            ratingState.update(value)
         }
-    val ratingScoreState = Observable(rating)
+    val ratingState = Observable(rating)
 
     fun clickBack() {
         onBack()
     }
 
-    fun setDuprRating(score: Double) {
-        rating = score
+    fun setDuprRating(rating: Double) {
+        this.rating = rating
+    }
+
+    private fun resetRating() {
+        rating = 0.0
     }
 
     fun systemBack() {
         onBack()
     }
 
-    fun calculateClassification(scoreClassification: Double) {
+    fun calculateClassification(score: Double) {
         classification = when {
-            scoreClassification >= 2.0 && scoreClassification < 3.0 -> "Novice"
+            score >= 2.0 && score < 3.0 -> "Novice"
 
-            scoreClassification >= 3.0 && scoreClassification < 4.0 -> "Intermediate"
+            score >= 3.0 && score < 4.0 -> "Intermediate"
 
-            scoreClassification >= 4.0 && scoreClassification < 5.0 -> "Advanced"
+            score >= 4.0 && score < 5.0 -> "Advanced"
 
-            scoreClassification >= 5.0 -> "Pro"
+            score >= 5.0 -> "Pro"
 
             else -> "Beginner"
         }
@@ -51,5 +55,6 @@ object ResultsViewModel {
         QuizViewModel.resetScore()
         QuizViewModel.resetQuestionIndex()
         resetClassification()
+        resetRating()
     }
 }

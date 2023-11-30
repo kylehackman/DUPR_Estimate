@@ -2,6 +2,8 @@ package hackman.kyle.logic
 
 object QuizViewModel {
 
+    private const val INITIAL_SCORE = 1.5
+
     private var question = Database.questions[0]
         set(value) {
             field = value
@@ -10,13 +12,7 @@ object QuizViewModel {
 
     val questionState = Observable(Database.questions[0])
 
-    private var score = 1.5
-        set(value) {
-            field = value
-            scoreState.update(value)
-        }
-
-    private val scoreState = Observable(score)
+    private var score = INITIAL_SCORE
 
     private var questionIndex = 0
 
@@ -28,7 +24,7 @@ object QuizViewModel {
     fun clickNoButton() {
         NavigationViewModel.navigateTo(NavigationViewModel.Screen.RESULTS)
         resetQuestionIndex()
-        if (score == 2.0) {
+        if (score == INITIAL_SCORE) {
             ResultsViewModel.setDuprRating(0.0)
         } else {
             setRatingAndClassification()
@@ -36,7 +32,7 @@ object QuizViewModel {
     }
 
     fun resetScore() {
-        score = 2.0
+        score = INITIAL_SCORE
     }
 
     fun resetQuestionIndex() {
