@@ -29,21 +29,23 @@ object ResultsViewModel {
     }
 
     fun calculateClassification(scoreClassification: Double) {
-        if (scoreClassification >= 2.0 && scoreClassification < 3.0) {
-            classification = "Novice"
-        } else if (scoreClassification >= 3.0 && scoreClassification < 4.0) {
-            classification = "Intermediate"
-        } else if (scoreClassification >= 4.0 && scoreClassification < 5.0) {
-            classification = "Advanced"
-        } else if (scoreClassification >= 5.0) {
-            classification = "Pro"
-        } else {
-            classification = "Beginner"
+        classification = when {
+            scoreClassification >= 2.0 && scoreClassification < 3.0 -> "Novice"
+
+            scoreClassification >= 3.0 && scoreClassification < 4.0 -> "Intermediate"
+
+            scoreClassification >= 4.0 && scoreClassification < 5.0 -> "Advanced"
+
+            scoreClassification >= 5.0 -> "Pro"
+
+            else -> "Beginner"
         }
     }
+
     private fun resetClassification() {
         classification = "Beginner"
     }
+
     private fun onBack() {
         NavigationViewModel.navigateTo(NavigationViewModel.Screen.START)
         QuizViewModel.resetScore()

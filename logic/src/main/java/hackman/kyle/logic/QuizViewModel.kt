@@ -10,13 +10,13 @@ object QuizViewModel {
 
     val questionState = Observable(Database.questions[0])
 
-    var score = 1.5
+    private var score = 1.5
         set(value) {
             field = value
             scoreState.update(value)
         }
 
-    val scoreState = Observable(score)
+    private val scoreState = Observable(score)
 
     private var questionIndex = 0
 
@@ -44,7 +44,7 @@ object QuizViewModel {
         question = Database.questions[questionIndex]
     }
 
-    fun nextQuestion() {
+    private fun nextQuestion() {
         if (questionIndex >= Database.questions.size - 1) {
             NavigationViewModel.navigateTo(NavigationViewModel.Screen.RESULTS)
             setRatingAndClassification()
@@ -56,7 +56,7 @@ object QuizViewModel {
         question = Database.questions[questionIndex]
     }
 
-    fun setRatingAndClassification() {
+    private fun setRatingAndClassification() {
         ResultsViewModel.setDuprRating(score)
         ResultsViewModel.calculateClassification(score)
     }
